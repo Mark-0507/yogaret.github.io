@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Script Star Trading Co., Limited | Yogaret - Lighting & Red Light Therapy</title>
+    <meta name="description" content="Hong Kong Script Star Trading Co., Limited - Home of Yogaret brand. Premium rechargeable table lamps, wall lamps, red light therapy belt and knee brace.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #fafaf8;
+            --bg-secondary: #f3f0eb;
+            --bg-dark: #1a1a1a;
+            --bg-darker: #111111;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-light: #6b6b6b;
+            --text-on-dark: #e8e6e1;
+            --text-on-dark-muted: #a8a6a0;
+            --accent-gold: #c49b4c;
+            --accent-gold-light: #d4b36a;
+            --accent-gold-dark: #a07830;
+            --accent-warm: #d4784a;
+            --border-light: #e0dcd5;
+            --border-medium: #c5c0b5;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.10);
+            --shadow-xl: 0 24px 50px rgba(0, 0, 0, 0.12);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition-fast: 0.2s ease;
+            --transition-smooth: 0.3s ease;
+            --max-width: 1200px;
+            --header-height: 76px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-dark);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .logo-text .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.3px;
+        }
+        .logo-text .brand-sub {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: var(--text-light);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        .nav-cta {
+            background: var(--bg-dark);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+        }
+        .nav-cta:hover {
+            background: #2d2d2d !important;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--header-height);
+            background: var(--bg-primary);
+        }
+        .hero-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 60px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        .highlight {
+            color: var(--accent-gold);
+        }
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 20px 0 32px;
+            max-width: 480px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--bg-dark);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: #2d2d2d;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--border-medium);
+        }
+        .btn-outline:hover {
+            border-color: var(--text-primary);
+            background: rgba(0,0,0,0.02);
+        }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-img-placeholder {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #f0ebe0, #e5d8c0);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 100px 32px;
+        }
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold-dark);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* PRODUCTS GRID */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .product-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: #f4f1ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--bg-dark);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .product-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .product-body .category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-gold-dark);
+            margin-bottom: 12px;
+        }
+        .product-highlights {
+            list-style: none;
+            margin: 0 0 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+        .product-highlights li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            line-height: 1.5;
+        }
+        .product-highlights li::before {
+            content: "▹";
+            color: var(--accent-gold);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .amazon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #232f3e;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-top: auto;
+            transition: background var(--transition-fast);
+            align-self: flex-start;
+        }
+        .amazon-btn:hover {
+            background: #131a22;
+        }
+        .amazon-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+        }
+
+        /* BRAND, ABOUT, CONTACT reuse previous styles */
+        .brand-section {
+            background: var(--bg-secondary);
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .brand-logo-placeholder {
+            width: 180px;
+            height: 180px;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold-dark);
+            box-shadow: var(--shadow-lg);
+            margin: 0 auto;
+        }
+        .about-section {
+            background: var(--bg-dark);
+            color: var(--text-on-dark);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .about-address {
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            line-height: 1.8;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            margin-bottom: 16px;
+        }
+        .footer {
+            background: var(--bg-darker);
+            color: var(--text-on-dark-muted);
+            padding: 40px 32px 30px;
+        }
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner, .brand-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo-area">
+                <div class="logo-icon">S★</div>
+                <div class="logo-text">
+                    <span class="brand-name">Script Star</span>
+                    <span class="brand-sub">Trading Co., Ltd.</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#brand">Brand</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="section-label">Hong Kong · Since 2015</span>
+                <h1>Light & Wellness <br>by <span class="highlight">Yogaret</span></h1>
+                <p class="hero-description">
+                    Cordless lighting and therapeutic red light devices that bring comfort, elegance, and innovation to everyday life.
+                </p>
+                <a href="#products" class="btn btn-primary">Explore Products →</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img-placeholder">
+                    💡
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND -->
+    <section class="section brand-section" id="brand">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Brand</span>
+                <h2 class="section-title">Yogaret</h2>
+                <p class="section-subtitle">Light · Wellness · Design — a modern brand dedicated to illuminating spaces and supporting well-being.</p>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-logo-placeholder">Y</div>
+                <div>
+                    <p style="font-size:1.1rem; color:var(--text-secondary);">
+                        Yogaret is the flagship brand of Hong Kong Script Star Trading Co., Limited. We specialize in rechargeable, cordless lighting and advanced red light therapy wearables. Every product is designed with a focus on quality, aesthetics, and real user needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Collection</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Innovative lighting and therapy devices available now on Amazon.</p>
+            </div>
+            <div class="products-grid">
+                
+                <!-- 台灯 - Table Lamp -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/table-lamp-main.jpg" alt="Rechargeable Table Lamp" onerror="this.parentNode.innerHTML='<div style=\'font-size:4rem;opacity:0.6;\'>🪔</div>'">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="category">Cordless Lighting</span>
+                        <h3>Rechargeable Table Lamp</h3>
+                        <ul class="product-highlights">
+                            <li>2-pack, 6000mAh battery, lasts 12-42 hours</li>
+                            <li>Stepless dimming & 3 color temperatures (2700K-6500K)</li>
+                            <li>IP65 waterproof for indoor/outdoor use</li>
+                            <li>USB-C charging, portable & cordless freedom</li>
+                        </ul>
+                        <a href="https://www.amazon.ca/gp/product/B0D5Y887YP" class="amazon-btn" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            View on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 壁灯 - Wall Lamp -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/wall-lamp-main.jpg" alt="Rechargeable Wall Lamp" onerror="this.parentNode.innerHTML='<div style=\'font-size:4rem;opacity:0.6;\'>💎</div>'">
+                        <span class="product-badge">Smart Sensor</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="category">Wall Lighting</span>
+                        <h3>Rechargeable Wall Sconce</h3>
+                        <ul class="product-highlights">
+                            <li>Motion sensor & night mode, auto on/off</li>
+                            <li>Magnetic detachable design, easy USB-C recharge</li>
+                            <li>6000mAh battery, 5 brightness levels, 3 color temps</li>
+                            <li>Remote & button control, timer, no wiring needed</li>
+                        </ul>
+                        <a href="https://www.amazon.ca/gp/product/B0G58N1YLH" class="amazon-btn" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            View on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 红光腰带 - Red Light Therapy Belt -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/redlight-belt-main.jpg" alt="Red Light Therapy Belt" onerror="this.parentNode.innerHTML='<div style=\'font-size:4rem;opacity:0.6;\'>🔴</div>'">
+                        <span class="product-badge">Therapy Tech</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="category">Red Light Therapy</span>
+                        <h3>Red Light Therapy Belt</h3>
+                        <ul class="product-highlights">
+                            <li>96 LEDs: 660nm + 850nm dual-wave deep tissue</li>
+                            <li>6000mAh cordless, up to 4 hours continuous use</li>
+                            <li>10Hz pulse mode for muscle relaxation</li>
+                            <li>Flexible neoprene wrap, auto-off timer, FSA/HSA eligible</li>
+                        </ul>
+                        <a href="https://www.amazon.com/gp/product/B0GLP9BM58" class="amazon-btn" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            View on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 护膝 - Knee Brace -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/redlight-knee-main.jpg" alt="Red Light Therapy Knee Brace" onerror="this.parentNode.innerHTML='<div style=\'font-size:4rem;opacity:0.6;\'>🦵</div>'">
+                        <span class="product-badge">Vibration</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="category">Red Light Therapy</span>
+                        <h3>Knee Massager Brace</h3>
+                        <ul class="product-highlights">
+                            <li>56 LEDs 660nm/850nm + deep vibration massage</li>
+                            <li>6000mAh battery, cordless, 240+ min runtime</li>
+                            <li>5 modes, 3 heat levels, 10/15/20 min auto-off</li>
+                            <li>Ergonomic fit for knee, shoulder, elbow</li>
+                        </ul>
+                        <a href="https://www.amazon.com/dp/B0GD7JT4R4?th=1" class="amazon-btn" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            View on Amazon
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Company</span>
+                <h2 class="section-title" style="color:#fff;">About Us</h2>
+                <p class="section-subtitle" style="color:var(--text-on-dark-muted);">Hong Kong Script Star Trading Co., Limited</p>
+            </div>
+            <div class="about-grid">
+                <div>
+                    <p style="color:var(--text-on-dark-muted);">We are a Hong Kong-based trading company dedicated to delivering high-quality consumer products under the Yogaret brand. From cordless lighting to red light therapy devices, our focus is on innovation, durability, and user experience.</p>
+                    <p style="color:var(--text-on-dark-muted);">Our headquarters in Tuen Mun serves as the center for product development, quality inspection, and worldwide distribution.</p>
+                </div>
+                <div class="about-address">
+                    <strong style="color:#fff;">Headquarters</strong><br>
+                    WIN SUN FACTORY BLDG<br>
+                    2 SAN HOP LANE<br>
+                    RM C26, UNIT B, 14/F<br>
+                    TUEN MUN 999077<br>
+                    HONG KONG HK
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get in touch</span>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <p style="margin-bottom:12px;"><strong>📍 Address:</strong><br>WIN SUN FACTORY BLDG, 2 SAN HOP LANE, RM C26, UNIT B, 14/F, TUEN MUN, HONG KONG</p>
+                    <p><strong>🏷️ Brand:</strong> Yogaret</p>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message. We will get back to you soon.');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea rows="4" placeholder="How can we help?"></textarea>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3 style="color:#fff; font-family:'Playfair Display',serif;">Script Star Trading</h3>
+                <p>香港書字星貿易有限公司 — Yogaret brand owner.</p>
+            </div>
+            <div>
+                <h4 style="color:#fff; margin-bottom:10px;">Links</h4>
+                <a href="#home" style="color:var(--text-on-dark-muted); display:block;">Home</a>
+                <a href="#products" style="color:var(--text-on-dark-muted); display:block;">Products</a>
+                <a href="#contact" style="color:var(--text-on-dark-muted); display:block;">Contact</a>
+            </div>
+            <div>
+                <h4 style="color:#fff; margin-bottom:10px;">Products</h4>
+                <span style="color:var(--text-on-dark-muted); display:block;">Table Lamps</span>
+                <span style="color:var(--text-on-dark-muted); display:block;">Wall Lamps</span>
+                <span style="color:var(--text-on-dark-muted); display:block;">Red Light Belt</span>
+                <span style="color:var(--text-on-dark-muted); display:block;">Knee Brace</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Hong Kong Script Star Trading Co., Limited. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
